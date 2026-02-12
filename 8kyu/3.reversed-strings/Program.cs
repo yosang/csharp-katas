@@ -1,11 +1,13 @@
 ﻿using System.Text;
+using System.Linq;
 using static System.Console;
 
 // WriteLine(reversedString("hello"));
 // WriteLine(reversedString("word"));
 
 // WriteLine(reversedStringLoop("hello"));
-WriteLine(reversedStringLoopSB("hello"));
+// WriteLine(reversedStringLoopSB("hello"));
+WriteLine(reversedStringLINQ("hello"));
 
 string reversedString(string s)
 {
@@ -41,4 +43,15 @@ string reversedStringLoopSB(string s)
         result.Append(s[i]);
     }
     return result.ToString(); // We convert our SB to a string;
+}
+
+// Probably the easiest way
+string reversedStringLINQ(string s)
+{
+    char[] reversed = s.Reverse().ToArray(); // Reverse return an IEnumerable<char> object, ToArray takes IEnumerable
+
+    return string.Concat(reversed);
+
+    // we can also do
+    // return string.Concat(s.Reverse());
 }
