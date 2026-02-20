@@ -1,1 +1,1 @@
-A repo for practicing c# with [codewars](https://www.codewars.com/dashboard) katas.
+A repo for practicing C# with .NET on [codewars](https://www.codewars.com/dashboard) katas.
