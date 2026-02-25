@@ -20,13 +20,16 @@
         foreach (string octet in arrOfOctets)
         {
             // If the octet is not 0, and starts with 0 
-            // or has leading/trailing space characters, return false
-            if (octet != "0" && octet.StartsWith("0") || octet.StartsWith(" ") || octet.EndsWith(" "))
+            // or has leading/trailing space characters
+            // or starts with a -, return false
+            if (octet != "0" && octet.StartsWith("0") || octet.StartsWith("-") || octet.StartsWith(" ") || octet.EndsWith(" "))
                 return false;
 
             // If we cant parse the string format to an int variable, return false
-            if (int.TryParse(octet, out int number))
+            if (!int.TryParse(octet, out int number))
                 return false;
+
+            Console.WriteLine(number);
 
             // If its not an octet, return false
             if (!isAnOctet(number))
@@ -38,19 +41,20 @@
     public static void Main()
     {
         // Truthful scenarios
-        // Console.WriteLine(IsValidIp("1.2.3.4"));
-        // Console.WriteLine(IsValidIp("123.45.67.89"));
+        // Console.WriteLine(IsValidIp("1.2.3.4")); // Valid, all 4 digits are octets
+        // Console.WriteLine(IsValidIp("123.45.67.89")); // Valid, all 4 digits are octets
+        // Console.WriteLine(IsValidIp("0.0.0.0")); // Valid, 0's are octets
 
         // Erroneous scenarios
-        // Console.WriteLine(IsValidIp("abc"));
-        // Console.WriteLine(IsValidIp("abc.def.ghi.jkl"));
-        // Console.WriteLine(IsValidIp("123.456.789.0"));
-        Console.WriteLine(IsValidIp("12.34.56 .1"));
-        // Console.WriteLine(IsValidIp("0.0.0.0"));
-        // Console.WriteLine(IsValidIp("1.2.3"));
-        // Console.WriteLine(IsValidIp("1.2.3.4.5"));
-        // Console.WriteLine(IsValidIp("123.456.78.90"));
-        // Console.WriteLine(IsValidIp("123.045.067.089"));
+        // Console.WriteLine(IsValidIp("abc")); // Wrong format (not numeric)
+        // Console.WriteLine(IsValidIp("abc.def.ghi.jkl")); // Wrong format (not numeric)
+        // Console.WriteLine(IsValidIp("123.456.789.0")); // Not all numbers are octets (456 and 789 are > 255)
+        // Console.WriteLine(IsValidIp("12.34.56 .1")); // Wrong format (trailing space in 56 )
+        // Console.WriteLine(IsValidIp("1.2.3")); // Does not consist of 4 octets (only 3 here)
+        // Console.WriteLine(IsValidIp("1.2.3.4.5")); // Too many octets (5 here)
+        // Console.WriteLine(IsValidIp("123.456.78.90")); // One of the numbers is not an octet (456)
+        // Console.WriteLine(IsValidIp("123.045.067.089")); // Numbers have leading zeros
+        // Console.WriteLine(IsValidIp("170.133.-0.245")); // Has a negative digit
 
         // * Testing the octet function
         // Console.WriteLine(isAnOctet(05)); // True
