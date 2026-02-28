@@ -9,7 +9,7 @@ A repo for practicing C# with .NET on [codewars](https://www.codewars.com/dashbo
 - [x] [backspaces-in-a-string](./6kyu/0.backspaces-in-a-string/)
 - [x] [stop-gninnipS-My-sdroW](./6kyu/1.stop-gninnipS-My-sdroW/)
 - [x] [ten-minutes-walk](./6kyu/2.ten-minutes-walk/)
-- [] [count-characters](./6kyu/3.count-characters/)
+- [x] [count-characters](./6kyu/3.count-characters/)
 - [] [consecutive-strings](./6kyu/4.consecutive-strings/)
 - [] [break-camelcase](./6kyu/5.break-camelcase/)
 - [] [highest-scoring-word](./6kyu/6.highest-scoring-word/)
