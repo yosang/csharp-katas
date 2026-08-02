@@ -4,6 +4,7 @@ A repo for practicing C# with .NET on [codewars](https://www.codewars.com/dashbo
 # 5kyu
 - [x] [move-zeroes-to-the-end](./5kyu/0.move-zeroes-to-the-end/)
 - [x] [ip-validation](./5kyu/1.ip-validation/)
+- [x] [rot13](./5kyu/2.rot13/) - 02.08.2026
 
 # 6kyu
 - [x] [backspaces-in-a-string](./6kyu/0.backspaces-in-a-string/)
